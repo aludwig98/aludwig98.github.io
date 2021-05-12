@@ -6,5 +6,31 @@
 <p><a href="dash_display/dash_display.html">My App 1</a></p>
 <p><a href="webassemblytest/WebAssemblyTest.html">My App 2</a></p>
 <p><a href="photo_uploader/mousepad_image_uploader.html">Photo Uploader</a></p>
+
+<h1>Select your mousepad size</h1>
+<input type="radio" name="padSize" id="lite" width="260" height="210">
+<label for="lite">The LITE</label><br>
+<input type="radio" name="padSize" id="precision" width="450" height="400">
+<label for="precision">The PRECISION</label><br>
+<input type="radio" name="padSize" id="colossus" width="900" height="400">
+<label for="colossus">The COLOSSUS</label><br>
+<input type="radio" name="padSize" id="mammoth" width="1000" height="600">
+<label for="mammoth">The MAMMOTH</label><br>
+
+<button onclick="myFunction()">GO!</button>
+
+<script>
+function myFunction() {
+  var ele = document.getElementsByName('padSize');
+  for(i = 0; i < ele.length; i++) {
+		if(ele[i].checked)
+		{
+			var width = ele[i].getAttribute("width")
+			var height = ele[i].getAttribute("height")
+			window.location.href = "webassemblytest/WebAssemblyTest.html?width=" + width + "&height=" + height
+		}
+	}
+}
+</script>
 </body>
 </html>
