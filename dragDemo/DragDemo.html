@@ -1,6 +1,13 @@
 <!doctype html>
 <html lang="en-us">
   <head>
+	<script 
+         src = "https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js">
+      </script>
+      <link rel = "stylesheet" 
+         href = "https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
+      <link rel = "stylesheet" 
+         href = "https://fonts.googleapis.com/icon?family=Material+Icons">	
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
@@ -9,7 +16,7 @@
         and Qt device independent pixels. -->
     <meta name="viewport" content="width=device-width, height=device-height, user-scalable=0"/>
 
-    <title>DragDemo</title>
+    <title>ID Gaming Photo Uploader</title>
     <style>
       /* Make the html body cover the entire (visual) viewport with no scroll bars. */
       html, body { padding: 0; margin: 0; overflow:hidden; height: 100vh }
@@ -24,9 +31,10 @@
   <body onload="init()" style="background-color:#141414;">
     <figure style="overflow:visible;" id="qtspinner">
       <center style="margin-top:1.5em; line-height:150%">
-        <img src="qtlogo.svg" width="320" height="200" style="display:block"></img>
-        <strong>Qt for WebAssembly: DragDemo</strong>
+        <img src="logo_400x400.png" width="200" height="200" style="display:block"></img>
+        <br><br>
         <div id="qtstatus"></div>
+		<div id = "progressbar2" class = "mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
         <noscript>JavaScript is disabled. Please enable JavaScript to use this application.</noscript>
       </center>
     </figure>
@@ -43,19 +51,19 @@
               showLoader: function(loaderStatus) {
                   spinner.style.display = 'block';
                   canvas.style.display = 'none';
-                  status.innerHTML = loaderStatus + "...";
+                  //status.innerHTML = loaderStatus + "...";
               },
               showError: function(errorText) {
-                  status.innerHTML = errorText;
+                  //status.innerHTML = errorText;
                   spinner.style.display = 'block';
                   canvas.style.display = 'none';
               },
               showExit: function() {
-                  status.innerHTML = "Application exit";
-                  if (qtLoader.exitCode !== undefined)
-                      status.innerHTML += " with code " + qtLoader.exitCode;
-                  if (qtLoader.exitText !== undefined)
-                      status.innerHTML += " (" + qtLoader.exitText + ")";
+                  //status.innerHTML = "Application exit";
+                  //if (qtLoader.exitCode !== undefined)
+                  //    status.innerHTML += " with code " + qtLoader.exitCode;
+                  //if (qtLoader.exitText !== undefined)
+                  //    status.innerHTML += " (" + qtLoader.exitText + ")";
                   spinner.style.display = 'block';
                   canvas.style.display = 'none';
               },
