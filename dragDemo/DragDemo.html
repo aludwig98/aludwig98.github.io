@@ -51,14 +51,15 @@
               showLoader: function(loaderStatus) {
                   spinner.style.display = 'block';
                   canvas.style.display = 'none';
-                  //status.innerHTML = loaderStatus + "...";
+                  status.innerHTML = loaderStatus + "...";
               },
               showError: function(errorText) {
-                  //status.innerHTML = errorText;
+                  status.innerHTML = errorText;
                   spinner.style.display = 'block';
                   canvas.style.display = 'none';
               },
               showExit: function() {
+				  status.innerHTML = "The Appliation has exited;
                   spinner.style.display = 'block';
                   canvas.style.display = 'none';
               },
