@@ -31,7 +31,7 @@
   <body onload="init()" style="background-color:#141414;">
     <figure style="overflow:visible;" id="qtspinner">
       <center style="margin-top:1.5em; line-height:150%">
-        <img src="logo_400x400.png" width="200" height="200" style="display:block"></img>
+        <img id="myLogo" src="logo_400x400.png" width="200" height="200" style="display:block"></img>
         <!--<br><br>-->
         <div id="qtstatus">Starting</div>
 		<!--<div id = "progressbar2" class = "mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>-->
@@ -45,6 +45,7 @@
           var spinner = document.querySelector('#qtspinner');
           var canvas = document.querySelector('#qtcanvas');
           var status = document.querySelector('#qtstatus')
+		  var logo = document.querySelector('#myLogo')
 
           var qtLoader = QtLoader({
               canvasElements : [canvas],
@@ -60,6 +61,7 @@
               },
               showExit: function() {
 				  status.innerHTML = "The Appliation has exited";
+				  logo.src = "/tmp/saved_screenshot.png";
                   spinner.style.display = 'block';
                   canvas.style.display = 'none';
               },
