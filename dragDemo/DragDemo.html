@@ -61,7 +61,13 @@
               },
               showExit: function() {
 				  status.innerHTML = "The Appliation has exited";
-				  logo.src = "/tmp/saved_screenshot.png";
+				  // Get the file path
+				  var filename = "/tmp/saved_screenshot.png";
+				  // COnvert it to a blob
+				  var blob = new Blob([FS.readFile(filename)], {"type": "image/png"});
+				  var url = URL.createObjectURL(blob);
+				  logo.src = url
+				  
                   spinner.style.display = 'block';
                   canvas.style.display = 'none';
               },
