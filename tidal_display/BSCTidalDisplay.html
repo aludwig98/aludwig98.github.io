@@ -63,16 +63,17 @@
             canvas.style.display = 'none';
           },
           showCanvas: function() {
+              // Initialize canvas size based on orientation
+            adjustCanvasSize();
+
+            // Listen for resize events to adjust canvas size dynamically
+            window.addEventListener('resize', adjustCanvasSize);
             spinner.style.display = 'none';
             canvas.style.display = 'block';
           },
         });
 
-        // Initialize canvas size based on orientation
-        adjustCanvasSize();
-
-        // Listen for resize events to adjust canvas size dynamically
-        window.addEventListener('resize', adjustCanvasSize);
+        
 
         qtLoader.loadEmscriptenModule("BSCTidalDisplay");
       }
